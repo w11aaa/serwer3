@@ -1,0 +1,268 @@
+/* Modern UI Upgrade for Sewer Defect Detection System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+    --secondary-gradient: linear-gradient(135deg, #00B4DB 0%, #0083B0 100%);
+    --surface-color: #ffffff;
+    --background-color: #f8f9fa;
+    --text-primary: #1a1f36;
+    --text-secondary: #4f566b;
+    --border-radius: 16px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Global Reset & Typography */
+* {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+/* Main Container */
+.main .block-container {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    max-width: 1280px;
+}
+
+/* Typography Enhancements */
+h1 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+h2::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 28px;
+    background: var(--primary-gradient);
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+h3 {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Modern Cards with Glassmorphism */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(71, 118, 230, 0.2);
+}
+
+/* Enhanced Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 12px;
+    background-color: white;
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+    border: 1px solid #eef0f3;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 48px;
+    border-radius: 12px;
+    padding: 0 24px;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.stTabs [aria-selected="true"] {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(71, 118, 230, 0.25);
+}
+
+.stTabs [data-baseweb="tab"]:hover:not([aria-selected="true"]) {
+    background-color: #f0f4ff;
+    color: #4776E6;
+}
+
+/* Modern Buttons */
+.stButton > button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(71, 118, 230, 0.3);
+    text-transform: none;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(71, 118, 230, 0.4);
+    filter: brightness(110%);
+}
+
+.stButton > button:active {
+    transform: translateY(1px);
+}
+
+/* File Uploader Redesign */
+.stFileUploader > div {
+    background-color: white;
+    border: 2px dashed #cfd7e6;
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.stFileUploader > div:hover {
+    border-color: #4776E6;
+    background-color: #f8fbff;
+}
+
+.stFileUploader button {
+    background-color: white;
+    color: #4776E6;
+    border: 1px solid #4776E6;
+}
+
+/* Metrics Dashboard Style */
+[data-testid="stMetric"] {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    box-shadow: var(--shadow-md);
+    border-color: #e0e0e0;
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* DataFrames & Tables */
+.stDataFrame {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #f0f0f0;
+}
+
+/* Custom Status Indicators */
+.status-pill {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-success { background: #e6f9ed; color: #28a745; border: 1px solid #b7ebc9; }
+.status-warning { background: #fff8e6; color: #ffc107; border: 1px solid #ffeeba; }
+.status-error { background: #fde8e8; color: #dc3545; border: 1px solid #f8b4b4; }
+.status-info { background: #e8f4fd; color: #0083B0; border: 1px solid #b8daff; }
+
+/* Image Containers */
+.stImage img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease;
+}
+
+.stImage img:hover {
+    transform: scale(1.01);
+}
+
+/* Sidebar Styling */
+[data-testid="stSidebar"] {
+    background-color: white;
+    border-right: 1px solid #f0f0f0;
+}
+
+[data-testid="stSidebar"] .block-container {
+    padding-top: 3rem;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Expander */
+.streamlit-expanderHeader {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    font-weight: 600;
+}
+
+.streamlit-expanderContent {
+    background-color: #fafafa;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #f0f0f0;
+    border-top: none;
+    padding: 1.5rem;
+}
